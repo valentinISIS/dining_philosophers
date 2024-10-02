@@ -1,0 +1,12 @@
+Q1.
+
+Les accès concurents sont pris en charge dans la classe "ChopStick". En effet,
+cette classe contient des méthodes syncronisées, et notifie bien les "Philosopher"
+de la fin de l'utilisation d'une méthode, ce qui permet de ne plus les bloquer.
+
+Q2.
+
+Il y a tout de même un interblocage (appellé aussi deadlock). On peut voir que
+chaque philosophe prend par exemple la baguette à sa droite, ce qui rend pour
+chacun impossible de prendre la baguette à sa gauche. Il attende donc que la
+baguette soit libre indéfiniment.
