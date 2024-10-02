@@ -12,7 +12,7 @@ public class ChopStick {
     synchronized public boolean take() throws InterruptedException {
         if (!iAmFree) {
             wait(2000);
-            return false;
+            if (!iAmFree) return false;
         }
         // assert iAmFree;
         iAmFree = false;
