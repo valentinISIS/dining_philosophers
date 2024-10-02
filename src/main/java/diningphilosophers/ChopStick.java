@@ -11,6 +11,7 @@ public class ChopStick {
 
     synchronized public boolean take() throws InterruptedException {
         if (!iAmFree) {
+            wait(2000);
             return false;
         }
         // assert iAmFree;
@@ -21,7 +22,7 @@ public class ChopStick {
     }
 
     synchronized public void release() {
-        // assert !iAmFree;
+        assert !iAmFree;
         System.out.println("baguette " + myNumber + " relâchée");
         iAmFree = true;
         notifyAll(); // On prévient ceux qui attendent que la baguette soit libre
